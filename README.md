@@ -16,7 +16,7 @@ This project is a visualization of a dragon shape using OpenGL. It demonstrates 
 ### Black
 ![Dark](Dark.png)
 ### colored
-![Colored](Colored.png)
+![Colored](colored.png)
 
 ## Prerequisites
 To run this project, you need to have the following installed on your system:
