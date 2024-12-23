@@ -193,7 +193,112 @@ edges = [
     ('I2','K2')
 ]
 
-def draw_dragon():
+def draw_colored_dragon():
+    polygons = [     
+        ['N2', 'M2', 'P2', 'O2'],
+        ['A2', 'Z1', 'W1', 'V1'],
+        ['G1', 'H1', 'F1', 'E1'],
+        ['E1', 'F1', 'A3', 'D1'],
+        ['F1', 'H1', 'I1', 'T1','R1','Q1'],
+        ['D1', 'A3', 'C1', 'R'],
+        ['R', 'C1', 'B1', 'A1'],
+        ['R1', 'Q1', 'O1', 'P1'],
+        ['E', 'A1', 'B1'],
+        ['F', 'O1', 'P1'],
+        ['S1','U1','D2','C2','W1','V1','A2'],
+        ['D','Z2','Q','R'],
+        ['Z2','C','P','Q'],
+        ['P','G','O'],
+        ['O','H','N'],
+        ['W2','I','K'],
+        ['M','K','J','L'],
+        ['R','Q','S'],
+        ['Q','P','O','N','T','S'],
+        ['T','M','N'],
+        ['N','H','W2','K','M'],
+        ['R','S','T','G1','E1','D1'],
+        ['G1','T','M','U','W','N1','L1'],
+        ['U','M','L','H2'],
+        ['K1','L1','N1','M1','L2'],
+        ['N1','M1','V','W'],
+        ['V','W','U','Z','J2'],
+        ['L2','M1','V','J2','I2','K2'],
+        ['I2','J2','Z','H2','G2'],
+        ['G2','H2','F2'],
+        ['K2','I2','G2','F2','E2','D2','B2','C2','V2','U2','T2','S2','R2','Q2'],
+        ['Q2', 'R2', 'S2'],
+        ['T2', 'U2', 'V2'],
+        ['C2', 'B2', 'D2'],
+        ['H1','G1','L1','K1','J1','I1'],
+        ['J1','K1','L2','M2','N2'],
+        ['M2','L2','K2','Q2','P2'],
+        ['T1','I1','J1','N2','O2','S1'],
+        ['S1','O2','P2','Q2','S2','T2','V2','C2','W1','Z1','A2'],
+        ['A2','Z1','W1','V1']
+
+        
+    ]
+    
+    # Define colors for polygons
+    colors = [
+        (152,43,28),   # Red
+   # Dark Brown
+        (250, 250, 255),
+
+         (79,68,53),
+          (79,68,53),
+           (79,68,53),
+                   (64,55,43),
+        (64,55,43),
+        (64,55,43),
+            (156,148,137),
+             (156,148,137),
+               (152,43,28),
+               (145,172,143),
+               (145,172,143),
+                (145,172,143),
+                 (145,172,143),
+                  (145,172,143),
+                  (102,120,95),
+                  (102,120,95),
+                  (102,120,95),
+                  (102,120,95),
+                  (102,120,95),
+                  (75,89,69),
+                  (75,89,69),
+                  (75,89,69),
+                  (165,157,132),
+                  (165,157,132),
+                  (165,157,132),
+                  (165,157,132),
+                  (165,157,132),
+                  (165,157,132),
+                  (165,157,132),
+                (255,255,255),    # Dark Brown
+                (255,255,255),    # Dark Brown
+                (255,255,255), 
+                (193,186,161),
+                (193,186,161),
+                (193,186,161),
+
+
+(191,180,161),
+(191,180,161),
+(154,126,111)
+
+
+
+    ]
+    
+    for polygon, color in zip(polygons, colors):
+        glColor3f(color[0] / 255.0, color[1] / 255.0, color[2] / 255.0)  # Normalize RGB to 0-1
+        glBegin(GL_POLYGON)
+        for vertex in polygon:
+            glVertex2fv(vertices[vertex])
+        glEnd()
+    
+    # Draw edges for outline
+    glColor3f(0, 0, 0)  # Black for edges
     glLineWidth(2)
     glBegin(GL_LINES)
     for edge in edges:
@@ -210,6 +315,9 @@ def main():
     glLoadIdentity()
     gluOrtho2D(-15, 15, -10, 10)
     
+    # Set the background color to white
+    glClearColor(1.0, 1.0, 1.0, 1.0)  # RGBA (white background)
+    
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -217,10 +325,10 @@ def main():
                 quit()
         
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-        glColor3f(1, 1, 1)  # White lines on black background
-        draw_dragon()
+        draw_colored_dragon()
         pygame.display.flip()
         pygame.time.wait(10)
 
 if __name__ == "__main__":
     main()
+
