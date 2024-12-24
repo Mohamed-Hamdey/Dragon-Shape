@@ -7,17 +7,16 @@ This project is a visualization of a dragon shape using OpenGL. It demonstrates 
 - **Coordinate System**: The shape is built using a predefined set of coordinates.
 - **Customizable**: Users can modify the coordinates to adjust the shape as needed.
 - **Scalable**: The code is structured to be extended for other shapes or transformations.
-- 
+
 ## Images
 ### Origin
-![Alt text](https://github.com/Mohamed-Hamdey/Dragon-Shape/blob/main/Origin.jpeg)
+![Origin](Origin.jpeg)
 ### White 
-![Alt text](https://github.com/Mohamed-Hamdey/Dragon-Shape/blob/main/Light.png)
+![Light](Light.png)
 ### Black
-![Alt text](https://github.com/Mohamed-Hamdey/Dragon-Shape/blob/main/Dark.png)
+![Dark](Dark.png)
 ### colored
-![Alt text](https://github.com/Mohamed-Hamdey/Dragon-Shape/blob/main/colored.png)
-
+![Colored](colored.png)
 
 ## Prerequisites
 To run this project, you need to have the following installed on your system:
@@ -50,6 +49,46 @@ To run this project, you need to have the following installed on your system:
    g++ dragon.cpp -o dragon -lGL -lGLU -lglut
    ```
 
+## Project Structure
+```
+Dragon-Shape (project name)/
+│
+├── main.py
+├── rendering/
+│   ├── __init__.py
+│   ├── interfaces/
+│   │   ├── __init__.py
+│   │   ├── i_renderer.py
+│   │   └── i_window.py
+│   │ 
+│   ├── dragon_renderer.py
+│   └── opengl_window.py
+│
+├── managers/
+│   ├── __init__.py
+│   ├── interfaces/
+│   │   ├── __init__.py
+│   │   ├── i_vertex_manager.py
+│   │   ├── i_edge_manager.py
+│   │   ├── i_color_manager.py
+│   │   ├── i_polygon_manager.py
+│   │   ├── i_theme_manager.py
+│   │   └── i_translation_manager.py
+│   │
+│   ├── vertex_manager.py
+│   ├── edge_manager.py
+│   ├── color_manager.py
+│   ├── polygon_manager.py
+│   ├── theme_manager.py
+│   └── translation_manager.py
+│
+└── assets/
+    ├── __init__.py
+    ├── vertices.py
+    ├── edges.py
+    ├── colors.py
+    └── polygons.py
+```
 ## Usage
 
 1. Run the compiled executable:
@@ -109,3 +148,22 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Thanks to the OpenGL community for extensive documentation and tutorials.
 - Inspired by geometric rendering techniques in computer graphics.
+
+## Contact
+
+For any inquiries or issues, feel free to reach out:
+
+- **Authors**:
+  - Mohamed Hamdey
+  - Beshoy Farouk
+  - Ahmed Wael
+  - Michael Hany
+  - Mohammed El-shafei
+
+
+- **Emails**: 
+  - mohamed.hamdey.hafez@gmail.com
+  - beshoyfarouk645@gmail.com
+  - ahmed.waell.hamed@gmail.com
+  - michealhany991@gmail.com
+  - mohamedalielshafei7@gmail.com
