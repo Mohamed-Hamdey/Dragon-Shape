@@ -1,7 +1,4 @@
-from assets.polygons import polygons
-from assets.colors import colors
-from assets.vertices import vertices
-from assets.edges import edges
+from assets import *
 
 from managers.interfaces import (
     VertexManagerInterface, EdgeManagerInterface,
@@ -43,10 +40,10 @@ def main():
 
     def translate_and_continue():
         """Handles translation logic after the initial render."""
+        nonlocal renderer, vertex_manager
         dx, dy = window.prompt_translation()
         if dx is not None and dy is not None:
             new_vertices = translation_manager.apply_translation(vertices, dx, dy)
-            nonlocal vertex_manager, renderer  # Update the managers
             vertex_manager = VertexManager(new_vertices)
             renderer = DragonRenderer(vertex_manager, edge_manager,
                                       polygon_manager, color_manager, theme_manager)

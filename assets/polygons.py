@@ -1,3 +1,24 @@
+"""
+Module: polygons
+
+This module defines a list of polygons for the rendering system.
+Each polygon is represented as a list of vertex labels that form
+the polygon's boundary.
+
+Polygons are used in rendering to create filled shapes that enhance
+the visual representation of the object.
+
+Attributes:
+    polygons (list): A list of lists, where each inner list contains
+    vertex labels (str) defining a polygon.
+
+Example:
+    [
+        ['N2', 'M2', 'P2', 'O2'],  # A polygon with four vertices
+        ['A2', 'Z1', 'W1', 'V1'],  # Another polygon with four vertices
+        ...
+    ]
+"""
 polygons = [
     ['N2', 'M2', 'P2', 'O2'],
     ['A2', 'Z1', 'W1', 'V1'],
